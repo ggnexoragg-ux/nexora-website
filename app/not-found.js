@@ -1,0 +1,1 @@
+export default function NotFound(){return <main className="lostPage"><div><small>ERROR // 404</small><h1>YOU LEFT<br/><span>THE MAP.</span></h1><p>Nox checked the minimap. There is absolutely nothing here.</p><img src="/nox/nox-thinking.webp" alt="Nox thinking"/><a href="/">RESPAWN AT NEXORA →</a></div></main>}
