@@ -5,7 +5,7 @@ const DUBBY='https://www.dubby.gg/';
 const pillars=[['01','SQUAD UP','Find players who actually play what you play. Build a squad, queue up and stop gaming alone.'],['02','LIVE THE COMMUNITY','Clips, voice chats, events, chaos and people worth coming back for.'],['03','STAY IN THE LOOP','Gaming news, recommendations, giveaways and content without the filler.']];
 const newsItems=[
  {category:'TECH',title:'APPLE PREPARING FIX FOR IPHONE 18 PRO FACE ID RESTART BUG',summary:'Some iPhone 18 Pro models can freeze and reboot after failed Face ID authentication. Apple says a software fix is coming.',date:'SEP 25, 2026',link:'/news/iphone-18-pro-face-id-restart-fix'},
- {category:'TECH NEWS',title:'TECH NEWS',summary:'PC hardware, consoles, gaming technology and industry updates — focused on the things that actually matter to players.',date:'TECHWIRE',link:TIKTOK},
+ {category:'GAMING',title:'PERSONA 3 RELOAD MITSURU KIRIJO FIGURE REVEALED',summary:'AMAKUNI has unveiled a new 1/7-scale Mitsuru Kirijo figure, with its Japanese release planned for 2027 and an October 2027 US retailer estimate.',date:'SEP 27, 2026',link:'/news/persona-3-reload-mitsuru-figure'},
  {category:'NEXORA',title:'MORE STORIES COMING',summary:'This section is updated as we cover new stories. Follow NEXORA on TikTok for our latest gaming and tech posts.',date:'UPDATING',link:TIKTOK}
 ];
 const giveaways=[
