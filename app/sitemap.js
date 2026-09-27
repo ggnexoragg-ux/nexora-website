@@ -1,0 +1,1 @@
+export default function sitemap(){const b='https://nexora-website-puce-eta.vercel.app';return ['','/news','/giveaways','/terms','/privacy','/news/hytale-15000-gobliterator-challenge','/news/persona-3-reload-mitsuru-figure','/news/iphone-18-pro-face-id-restart-fix','/news/rtx-30-smooth-motion-mod'].map(x=>({url:b+x,lastModified:new Date()}))}
