@@ -1,0 +1,3 @@
+'use client'
+import {useEffect,useState} from 'react'
+export default function SiteExtras(){const[loading,setLoading]=useState(true);const[nox,setNox]=useState(false);useEffect(()=>{const t=setTimeout(()=>setLoading(false),720);return()=>clearTimeout(t)},[]);return <>{loading&&<div className="boot"><div className="bootMark">N</div><b>NEXORA SYSTEM</b><span>INITIALIZING // COMMUNITY INTERFACE</span><i/></div>}<button className="noxEgg" onClick={()=>setNox(true)} aria-label="Nox easter egg">•</button>{nox&&<div className="noxPop" onClick={()=>setNox(false)}><img src="/nox.png" alt="Nox"/><div><small>NXR // NOX_OVERRIDE</small><strong>WHY ARE YOU<br/>CLICKING ME?</strong><span>click anywhere to close</span></div></div>}</>}
