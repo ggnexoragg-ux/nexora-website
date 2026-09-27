@@ -3,7 +3,7 @@ const DISCORD='https://discord.gg/3yWX2qTUZ';
 const TIKTOK='https://www.tiktok.com/@nex0ra.gg';
 const DUBBY='https://www.dubby.gg/';
 const pillars=[['01','SQUAD UP','Find players who actually play what you play. Build a squad, queue up and stop gaming alone.'],['02','LIVE THE COMMUNITY','Clips, voice chats, events, chaos and people worth coming back for.'],['03','STAY IN THE LOOP','Gaming news, recommendations, giveaways and content without the filler.']];
-const newsItems=[
+const newsItems=[{category:'TECH',title:'MODDERS BRING NVIDIA SMOOTH MOTION TO RTX 30-SERIES GPUs',summary:'Unofficial community tools are enabling NVIDIA’s driver-level Smooth Motion frame interpolation on RTX 30-series Ampere hardware.',date:'SEP 24, 2026',link:'/news/rtx-30-smooth-motion-mod'},
  {category:'TECH',title:'APPLE PREPARING FIX FOR IPHONE 18 PRO FACE ID RESTART BUG',summary:'Some iPhone 18 Pro models can freeze and reboot after failed Face ID authentication. Apple says a software fix is coming.',date:'SEP 25, 2026',link:'/news/iphone-18-pro-face-id-restart-fix'},
  {category:'GAMING',title:'PERSONA 3 RELOAD MITSURU KIRIJO FIGURE REVEALED',summary:'AMAKUNI has unveiled a new 1/7-scale Mitsuru Kirijo figure, with its Japanese release planned for 2027 and an October 2027 US retailer estimate.',date:'SEP 27, 2026',link:'/news/persona-3-reload-mitsuru-figure'},
  {category:'GAMING',title:'HYTALE PUTS $15,000 ON THE GOBLITERATOR BOSS CHALLENGE',summary:'The first streamer to defeat Hytale’s upcoming Gobliterator under a brutal hardcore ruleset can claim a $15,000 reward.',date:'SEP 28, 2026',link:'/news/hytale-15000-gobliterator-challenge'}
