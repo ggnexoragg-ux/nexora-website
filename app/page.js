@@ -1,61 +1,27 @@
 const DISCORD='https://discord.gg/3yWX2qTUZ';
 const TIKTOK='https://www.tiktok.com/@nex0ra.gg';
 const DUBBY='https://www.dubby.gg/';
-const features=[
-  ['01','FIND YOUR SQUAD','Meet players, build squads and stop queueing alone.'],
-  ['02','STAY FOR THE CHAOS','Talk games, share clips, hang out and become part of the community.'],
-  ['03','DISCOVER MORE','Fast gaming news, recommendations, giveaways and community events.']
-];
-export default function Home(){
-  return <main>
-    <div className="grid-bg"/><div className="orb orb1"/><div className="orb orb2"/>
-    <nav className="nav"><div className="wrap navin">
-      <a className="brand" href="#top"><img src="/nexora-logo.png" alt="NEXORA logo"/><span>NEXORA</span></a>
-      <div className="links"><a href="#community">Community</a><a href="#content">Content</a><a href="#giveaways">Giveaways</a><a href="#partners">Partners</a><a className="btn primary navcta" href={DISCORD} target="_blank" rel="noreferrer">JOIN DISCORD</a></div>
-    </div></nav>
+const pillars=[['01','SQUAD UP','Find players who actually play what you play. Build a squad, queue up and stop gaming alone.'],['02','LIVE THE COMMUNITY','Clips, voice chats, events, chaos and people worth coming back for.'],['03','STAY IN THE LOOP','Gaming news, recommendations, giveaways and content without the filler.']];
+export default function Home(){return <main id="top">
+<div className="cursorGlow"/><div className="mesh"/><div className="scanlines"/>
+<nav className="nav"><div className="wrap navin"><a href="#top" className="brand"><img src="/nexora-logo.png" alt="NEXORA"/><span>NEXORA</span></a><div className="navlinks"><a href="#community">COMMUNITY</a><a href="#content">CONTENT</a><a href="#giveaways">DROPS</a><a href="#partners">PARTNERS</a></div><a className="navjoin" href={DISCORD} target="_blank" rel="noreferrer"><i/> JOIN NEXORA</a></div></nav>
 
-    <div className="wrap" id="top">
-      <header className="hero">
-        <div className="hero-copy">
-          <div className="status"><i/> GLOBAL GAMING COMMUNITY</div>
-          <h1>PLAY.<br/>CONNECT.<br/><span>BELONG.</span></h1>
-          <p>NEXORA brings gamers together. Find teammates, discover games, catch the news, enter giveaways — or just hang out.</p>
-          <div className="actions"><a className="btn primary" href={DISCORD} target="_blank" rel="noreferrer">JOIN THE DISCORD <b>↗</b></a><a className="btn ghost" href={TIKTOK} target="_blank" rel="noreferrer">WATCH @NEX0RA.GG</a></div>
-          <div className="hero-meta"><span>BASED IN GREECE</span><span>•</span><span>BUILT FOR EVERYONE</span></div>
-        </div>
-        <div className="hero-art"><div className="nox-ring"/><div className="nox-label">MEET NOX <span>↘</span></div><img src="/nox.png" alt="Nox, NEXORA mascot"/></div>
-      </header>
+<header className="hero wrap">
+<div className="heroCopy"><div className="micro"><span>EST. 2026</span><b>GLOBAL GAMING NETWORK</b></div><h1><em>THIS IS</em><br/>WHERE<br/><span>GAMERS</span><br/>CONNECT.</h1><p>Find your squad. Discover your next game. Catch what matters. NEXORA is a global community made by gamers, for gamers.</p><div className="heroActions"><a className="cta" href={DISCORD} target="_blank" rel="noreferrer">ENTER NEXORA <span>↗</span></a><a className="watch" href={TIKTOK} target="_blank" rel="noreferrer"><b>▶</b> WATCH THE FEED</a></div></div>
+<div className="heroVisual"><div className="rings"><i/><i/><i/></div><div className="purpleCore"/><div className="floatTag tag1">COMMUNITY // ONLINE</div><div className="floatTag tag2">NOX // MASCOT_01</div><div className="floatTag tag3">GR → WORLDWIDE</div><img src="/nox.png" alt="Nox"/><div className="noxName">NOX<span>01</span></div></div>
+<div className="scroll">SCROLL TO ENTER <i/></div></header>
 
-      <section id="community">
-        <div className="section-head"><div><div className="kicker">01 / THE COMMUNITY</div><h2>YOUR NEXT <span>SQUAD</span><br/>STARTS HERE.</h2></div><p className="lead">Not another dead server. NEXORA is being built around the people inside it.</p></div>
-        <div className="grid3">{features.map(([n,t,d])=><article className="card" key={n}><div className="cardtop"><span>{n}</span><b>↗</b></div><h3>{t}</h3><p>{d}</p></article>)}</div>
-      </section>
+<div className="ticker"><div>FIND TEAMMATES <b>✦</b> GAMING NEWS <b>✦</b> GIVEAWAYS <b>✦</b> COMMUNITY EVENTS <b>✦</b> MEMES <b>✦</b> GAME RECOMMENDATIONS <b>✦</b> FIND TEAMMATES <b>✦</b> GAMING NEWS <b>✦</b> GIVEAWAYS <b>✦</b> COMMUNITY EVENTS <b>✦</b></div></div>
 
-      <section id="content">
-        <div className="kicker">02 / ON YOUR FEED</div><h2>GAMING CONTENT.<br/><span>NO FILLER.</span></h2>
-        <div className="feature">
-          <article className="bigcard news"><div className="tag">NEWS</div><div><h3>THE STORIES YOU<br/>ACTUALLY CARE ABOUT.</h3><p>Fast gaming updates, releases and stories you may have missed.</p></div></article>
-          <article className="bigcard noxcard"><img src="/nox.png" alt="Nox"/><div className="tag">NOX</div><div><h3>HE HAS OPINIONS.</h3><p>Reviews, Gaming Court, recommendations, memes and whatever we put him through next.</p></div></article>
-        </div>
-        <div className="center"><a className="textlink" href={TIKTOK} target="_blank" rel="noreferrer">SEE WHAT WE'RE POSTING ON TIKTOK ↗</a></div>
-      </section>
+<section id="community" className="wrap community"><div className="sectionNum">01</div><div className="sectionIntro"><div className="eyebrow">THE COMMUNITY</div><h2>NOT JUST A<br/><span>SERVER.</span></h2><p>NEXORA is the place between the games — where the squad forms, the clips get shared and the next session starts.</p></div><div className="pillarGrid">{pillars.map(([n,t,d])=><article className="pillar" key={n}><div className="pnum">{n}</div><div className="corner">↗</div><div className="pIcon">{n==='01'?'⌁':n==='02'?'◉':'⌾'}</div><h3>{t}</h3><p>{d}</p><div className="line"/></article>)}</div></section>
 
-      <section id="giveaways" className="giveaway">
-        <div className="givecopy"><div className="kicker">03 / GIVEAWAYS & EVENTS</div><h2>GOOD THINGS<br/><span>HAPPEN HERE.</span></h2><p>Game giveaways, community milestones and events happen inside NEXORA. Be there for the next one.</p><a className="btn primary" href={DISCORD} target="_blank" rel="noreferrer">DON'T MISS THE NEXT DROP →</a></div>
-        <div className="ticket"><div className="ticket-label">NEXORA COMMUNITY PASS</div><div className="ticket-mark">N</div><div className="ticket-bottom"><span>PLAYER // 001</span><span>ACCESS: GRANTED</span></div></div>
-      </section>
+<section id="content" className="contentSection"><div className="wrap"><div className="sectionNum">02</div><div className="splitTitle"><div><div className="eyebrow">NEXORA ON YOUR FEED</div><h2>CONTENT THAT<br/><span>HITS DIFFERENT.</span></h2></div><a href={TIKTOK} target="_blank" rel="noreferrer">VIEW @NEX0RA.GG ↗</a></div><div className="showcase"><article className="show mainShow"><div className="hud">NXR // NEWS_001</div><div className="crosshair">+</div><div className="showCopy"><small>FAST. CLEAN. WORTH KNOWING.</small><h3>GAMING NEWS<br/>WITHOUT THE<br/>PRESS CONFERENCE.</h3><p>The stories you care about, made for the feed.</p></div></article><article className="show noxShow"><img src="/nox.png" alt="Nox"/><div className="hud">NXR // NOX_001</div><div className="showCopy"><small>OUR RESIDENT MENACE</small><h3>NOX HAS<br/>OPINIONS.</h3><p>Gaming Court. Reviews. Memes. Questionable decisions.</p></div></article></div></div></section>
 
-      <section id="partners">
-        <div className="kicker">04 / PARTNERS</div><h2>POWERING THE<br/><span>NEXT SESSION.</span></h2>
-        <div className="partner"><div><div className="partnername">NEXORA <i>×</i> DUBBY</div><p>Our official energy partner. Use the NEXORA community code at checkout and support us while saving on your order.</p><a className="textlink" href={DUBBY} target="_blank" rel="noreferrer">VISIT DUBBY ↗</a></div><div className="discount"><small>YOUR CODE</small><strong>NEXORADUBBY</strong><span>10% OFF</span></div></div>
-      </section>
+<section id="giveaways" className="wrap drop"><div className="sectionNum">03</div><div className="dropGrid"><div><div className="eyebrow">DROPS / GIVEAWAYS / EVENTS</div><h2>BE THERE<br/>WHEN IT<br/><span>DROPS.</span></h2><p>Games, community events and surprises. The Discord gets it first.</p><a className="cta" href={DISCORD} target="_blank" rel="noreferrer">GET ACCESS <span>→</span></a></div><div className="accessCard"><div className="cardGlow"/><div className="acTop"><span>NEXORA</span><span>COMMUNITY ACCESS</span></div><div className="giantN">N</div><div className="barcode">|||| ||| || ||||| ||| || ||||</div><div className="acBottom"><div><small>STATUS</small><b>ACTIVE</b></div><div><small>REGION</small><b>GLOBAL</b></div><div><small>CLASS</small><b>PLAYER</b></div></div></div></div></section>
 
-      <section className="finalcta">
-        <img src="/nexora-logo.png" alt="NEXORA"/>
-        <div className="kicker">YOU MADE IT THIS FAR.</div><h2>SO... YOU<br/><span>JOINING?</span></h2><p>Come say hi. Nox probably won't.</p><a className="btn primary jumbo" href={DISCORD} target="_blank" rel="noreferrer">ENTER NEXORA →</a>
-      </section>
-    </div>
+<section id="partners" className="partnerSection"><div className="wrap"><div className="sectionNum">04</div><div className="eyebrow">OFFICIAL PARTNER</div><div className="partnerHero"><div><h2>NEXORA <span>×</span><br/>DUBBY.</h2><p>Fuel the next session and support the community. Use our code at checkout.</p><a href={DUBBY} target="_blank" rel="noreferrer">VISIT DUBBY ↗</a></div><div className="codeBox"><small>COMMUNITY CODE</small><strong>NEXORADUBBY</strong><div><span>10%</span> OFF YOUR ORDER</div></div></div></div></section>
 
-    <footer className="footer"><div className="wrap footerrow"><a className="brand" href="#top"><img src="/nexora-logo.png" alt=""/><span>NEXORA</span></a><div className="socials"><a href={DISCORD} target="_blank" rel="noreferrer">DISCORD</a><a href={TIKTOK} target="_blank" rel="noreferrer">TIKTOK</a></div><div className="tiny">© 2026 NEXORA // GAMING, TOGETHER.</div></div></footer>
-  </main>
-}
+<section className="end wrap"><div className="endLogo"><img src="/nexora-logo.png" alt="NEXORA"/><div className="pulse"/></div><div className="eyebrow">THE LOBBY IS OPEN</div><h2>YOUR SQUAD<br/>COULD BE<br/><span>WAITING.</span></h2><p>Join NEXORA. Say hi. Find a game. Stay awhile.</p><a className="cta mega" href={DISCORD} target="_blank" rel="noreferrer">JOIN THE COMMUNITY <span>↗</span></a></section>
+
+<footer><div className="wrap foot"><a className="brand" href="#top"><img src="/nexora-logo.png" alt=""/><span>NEXORA</span></a><div className="footlinks"><a href={DISCORD} target="_blank" rel="noreferrer">DISCORD ↗</a><a href={TIKTOK} target="_blank" rel="noreferrer">TIKTOK ↗</a></div><div className="copy">© 2026 // NEXORA<br/>GAMING, TOGETHER.</div></div></footer>
+</main>}
