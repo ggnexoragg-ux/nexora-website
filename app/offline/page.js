@@ -1,0 +1,1 @@
+export default function Offline(){return <main className="offlinePage"><div><small>NXR // CONNECTION_LOST</small><h1>YOU WENT<br/><span>OFFLINE.</span></h1><p>The lobby disappeared. Check your connection and try again.</p><button onClick={undefined}><a href="/">RECONNECT TO NEXORA →</a></button></div></main>}
