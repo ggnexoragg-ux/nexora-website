@@ -1,0 +1,3 @@
+'use client'
+import {useState} from 'react'
+export default function ArticleExtras({related=[]}){const[copied,setCopied]=useState(false);const copy=async()=>{await navigator.clipboard.writeText(location.href);setCopied(true);setTimeout(()=>setCopied(false),1400)};const share=async()=>{if(navigator.share)await navigator.share({title:document.title,url:location.href});else copy()};return <><div className="articleTools"><span>SHARE // NEXORA</span><button onClick={copy}>{copied?'COPIED ✓':'COPY LINK'}</button><button onClick={share}>SHARE ↗</button></div><div className="readNext"><div className="eyebrow">READ NEXT</div><div>{related.map(x=><a href={x.href} key={x.href}><small>{x.category}</small><strong>{x.title}</strong><span>READ STORY →</span></a>)}</div></div></>}
