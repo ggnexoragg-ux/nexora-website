@@ -1,0 +1,4 @@
+'use client'
+import {useEffect,useState} from 'react'
+const poses=[['thinking','NEWS MODE'],['talk','CONTENT MODE'],['happy','GIVEAWAY MODE'],['point','JOIN THE SQUAD'],['question','LOOKING FOR GROUP?'],['shrug','KEEP EXPLORING'],['plain','NOX ONLINE'],['mad','YOU FOUND ME']]
+export default function NoxGuide(){const[i,setI]=useState(6),[open,setOpen]=useState(false);useEffect(()=>{const on=()=>{const p=window.scrollY/Math.max(1,document.documentElement.scrollHeight-innerHeight);setI(p<.13?6:p<.34?0:p<.52?1:p<.69?2:p<.84?4:3)};on();addEventListener('scroll',on,{passive:true});return()=>removeEventListener('scroll',on)},[]);const pose=open?7:i;return <button className={'noxGuide nox-'+poses[pose][0]} onClick={()=>setOpen(v=>!v)} aria-label="Interact with Nox"><span className="noxSprite"/><em>{open?'OKAY. YOU FOUND THE SECRET NOX.':poses[pose][1]}</em><small>NOX // NXR</small></button>}
