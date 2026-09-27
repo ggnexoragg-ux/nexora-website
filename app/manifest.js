@@ -1,0 +1,1 @@
+export default function manifest(){return {name:'NEXORA — Gaming, Together.',short_name:'NEXORA',description:'A global gaming community for teammates, news and giveaways.',start_url:'/',display:'standalone',background_color:'#050506',theme_color:'#0b0711',icons:[{src:'/nexora-logo.png',sizes:'any',type:'image/png'}]}}
