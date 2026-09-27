@@ -6,7 +6,7 @@ const pillars=[['01','SQUAD UP','Find players who actually play what you play. B
 const newsItems=[
  {category:'TECH',title:'APPLE PREPARING FIX FOR IPHONE 18 PRO FACE ID RESTART BUG',summary:'Some iPhone 18 Pro models can freeze and reboot after failed Face ID authentication. Apple says a software fix is coming.',date:'SEP 25, 2026',link:'/news/iphone-18-pro-face-id-restart-fix'},
  {category:'GAMING',title:'PERSONA 3 RELOAD MITSURU KIRIJO FIGURE REVEALED',summary:'AMAKUNI has unveiled a new 1/7-scale Mitsuru Kirijo figure, with its Japanese release planned for 2027 and an October 2027 US retailer estimate.',date:'SEP 27, 2026',link:'/news/persona-3-reload-mitsuru-figure'},
- {category:'NEXORA',title:'MORE STORIES COMING',summary:'This section is updated as we cover new stories. Follow NEXORA on TikTok for our latest gaming and tech posts.',date:'UPDATING',link:TIKTOK}
+ {category:'GAMING',title:'HYTALE PUTS $15,000 ON THE GOBLITERATOR BOSS CHALLENGE',summary:'The first streamer to defeat Hytale’s upcoming Gobliterator under a brutal hardcore ruleset can claim a $15,000 reward.',date:'SEP 28, 2026',link:'/news/hytale-15000-gobliterator-challenge'}
 ];
 const giveaways=[
  {title:'HUMAN FALL FLAT',prize:'2 GAME KEYS • 2 WINNERS',status:'ACTIVE',description:'Our current NEXORA giveaway has two Human Fall Flat game keys up for grabs, with two separate winners. Join the Discord to be part of the community and open our TikTok for the giveaway post and entry information.'},
