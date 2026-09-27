@@ -1,6 +1,7 @@
 import Experience from './Experience'
 import SiteExtras from './SiteExtras'
 import GiveawayCountdown from './GiveawayCountdown'
+import LiveStats from './LiveStats'
 const DISCORD='https://discord.gg/3yWX2qTUZ';
 const TIKTOK='https://www.tiktok.com/@nex0ra.gg';
 const DUBBY='https://www.dubby.gg/';
