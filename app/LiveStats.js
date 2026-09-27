@@ -1,0 +1,3 @@
+'use client'
+import {useEffect,useState} from 'react'
+export default function LiveStats(){const[d,setD]=useState(null);useEffect(()=>{let live=true;const load=()=>fetch('/api/stats').then(r=>r.json()).then(x=>live&&setD(x)).catch(()=>{});load();const t=setInterval(load,60000);return()=>{live=false;clearInterval(t)}},[]);return <div className="liveStats"><div><i className="liveDot"/><small>DISCORD MEMBERS</small><strong>{d?.discord??'—'}</strong><span>LIVE COMMUNITY</span></div><div><i className="liveDot tt"/><small>TIKTOK FOLLOWERS</small><strong>{d?.tiktok??'—'}</strong><span>{d?.tiktok?'LIVE SOCIAL':'CONNECTING SOON'}</span></div></div>}
