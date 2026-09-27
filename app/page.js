@@ -1,3 +1,4 @@
+import Experience from './Experience'
 const DISCORD='https://discord.gg/3yWX2qTUZ';
 const TIKTOK='https://www.tiktok.com/@nex0ra.gg';
 const DUBBY='https://www.dubby.gg/';
@@ -11,7 +12,7 @@ const giveaways=[
  {title:'HUMAN FALL FLAT',prize:'2 GAME KEYS • 2 WINNERS',status:'ACTIVE',description:'Our current NEXORA giveaway has two Human Fall Flat game keys up for grabs, with two separate winners. Join the Discord to be part of the community and open our TikTok for the giveaway post and entry information.'},
  {title:'BATMAN: ARKHAM COLLECTION',prize:'PREVIOUS NEXORA GIVEAWAY',status:'ENDED',description:'This NEXORA giveaway has officially ended. It remains here in our giveaway archive as part of the community’s history — thank you to everyone who entered.'}
 ];
-export default function Home(){return <main id="top">
+export default function Home(){return <main id="top"><Experience/>
 <div className="cursorGlow"/><div className="mesh"/><div className="scanlines"/>
 <nav className="nav"><div className="wrap navin"><a href="#top" className="brand"><img src="/nexora-logo.png" alt="NEXORA"/><span>NEXORA</span></a><div className="navlinks"><a href="#community">COMMUNITY</a><a href="#news">NEWS</a><a href="#content">CONTENT</a><a href="#giveaways">DROPS</a><a href="#partners">PARTNERS</a></div><a className="navjoin" href={DISCORD} target="_blank" rel="noreferrer"><i/> JOIN NEXORA</a></div></nav>
 
