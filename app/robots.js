@@ -1,1 +1,1 @@
-export default function robots(){return {rules:{userAgent:'*',allow:'/'},sitemap:'https://nexora-website-puce-eta.vercel.app/sitemap.xml'}}
+export default function robots(){const b=process.env.NEXT_PUBLIC_SITE_URL||'https://nexora-website-puce-eta.vercel.app';return {rules:{userAgent:'*',allow:'/'},sitemap:b+'/sitemap.xml'}}
