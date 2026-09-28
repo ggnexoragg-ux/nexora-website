@@ -1,5 +1,6 @@
 import './globals.css'
 import './sections.css'
+import './audit-fixes.css'
 import SiteSystems from './SiteSystems'
 
 const SITE_URL=process.env.NEXT_PUBLIC_SITE_URL||'https://nexora-website-puce-eta.vercel.app'
