@@ -1,0 +1,37 @@
+/* NEXORA // SUBPAGE AUDIT FIXES */
+
+/* Global Discover launcher */
+.hubLauncher{position:fixed;right:18px;top:92px;z-index:105;width:min(320px,calc(100vw - 36px));font-family:Arial,Helvetica,sans-serif}
+.hubLauncherToggle{width:100%;display:flex;align-items:center;justify-content:space-between;padding:12px 14px;border:1px solid rgba(255,255,255,.12);background:rgba(9,7,13,.88);backdrop-filter:blur(14px);color:#d8d1df;font-size:8px;font-weight:900;letter-spacing:.16em;box-shadow:0 16px 45px rgba(0,0,0,.25)}
+.hubLauncherToggle b{font-size:18px;line-height:1;color:#c084fc}
+.hubLauncherMenu{display:none;margin-top:6px;padding:10px;border:1px solid rgba(168,85,247,.26);background:rgba(8,6,12,.97);backdrop-filter:blur(18px);box-shadow:0 28px 80px rgba(0,0,0,.46)}
+.hubLauncher.isOpen .hubLauncherMenu{display:block}
+.hubLauncherMenu>small{display:block;padding:8px 10px 11px;color:#67e8f9;font-size:7px;font-weight:900;letter-spacing:.2em}
+.hubLauncherMenu a{display:grid;grid-template-columns:30px 1fr auto;gap:10px;align-items:center;padding:13px 10px;border-top:1px solid rgba(255,255,255,.07);color:#d8d1df;text-decoration:none;font-size:9px;font-weight:850;letter-spacing:.1em;transition:.2s}
+.hubLauncherMenu a b{color:#625b69;font-size:8px}.hubLauncherMenu a i{font-style:normal;color:#c084fc}.hubLauncherMenu a:hover{padding-left:14px;color:#fff;background:rgba(139,92,246,.09);border-color:rgba(168,85,247,.25)}
+
+/* Directory / system cards should not inherit the locked-achievement fade */
+.systemPage .achievementGrid article{opacity:1}
+.achievementsPage .achievementGrid article:not(.unlocked){opacity:.45}
+.achievementGrid>a{display:block;color:inherit;text-decoration:none}
+.achievementGrid>a article{height:100%;transition:transform .25s,border-color .25s,background .25s}
+.achievementGrid>a:hover article{transform:translateY(-5px);border-color:rgba(168,85,247,.42);background:rgba(13,10,18,.96)}
+
+/* Community poll / CTA blocks used across Discover, Creators, Releases and Streamers */
+.hubPoll{max-width:1180px;margin:56px auto 0;padding:32px 24px 0;border-top:1px solid rgba(255,255,255,.08)}
+.hubSectionHead{max-width:760px}.hubSectionHead small{color:#67e8f9;font-size:8px;font-weight:900;letter-spacing:.18em}.hubSectionHead h2{font-size:clamp(34px,5vw,62px);line-height:.92;letter-spacing:-.045em;margin:12px 0}.hubSectionHead h2 span{color:#c084fc}.hubSectionHead p{color:#8f8795;line-height:1.7;max-width:680px}
+.hubPollOptions{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin-top:26px}.hubPollOptions button{min-height:66px;display:grid;grid-template-columns:38px 1fr auto;gap:12px;align-items:center;text-align:left;padding:14px 16px;border:1px solid rgba(255,255,255,.1);background:#09080c;color:#bdb6c3;font-size:10px;font-weight:850;letter-spacing:.06em;transition:.22s}.hubPollOptions button b{color:#625b69;font-size:8px}.hubPollOptions button i{font-style:normal;color:#c084fc}.hubPollOptions button:hover,.hubPollOptions button.selected{border-color:rgba(103,232,249,.42);background:rgba(103,232,249,.055);color:#fff;transform:translateY(-2px)}.hubPollOptions button.selected i{color:#67e8f9}.hubPollSaved{margin-top:10px;color:#67e8f9;font-size:8px;font-weight:900;letter-spacing:.16em}
+.hubPoll>.cta{margin-top:22px}
+
+/* Shared subpage polish */
+.systemHero{padding-top:0}.systemPage .hubNav{position:relative;z-index:2;background:rgba(5,5,6,.52);backdrop-filter:blur(10px)}
+.systemPage .achievementGrid article{transition:transform .25s,border-color .25s,background .25s}.systemPage .achievementGrid article:hover{transform:translateY(-4px);border-color:rgba(168,85,247,.32);background:#0c0a10}
+.systemPage .achievementGrid article strong{color:#c8b5ff}
+
+@media(max-width:760px){
+  .hubLauncher{top:66px;right:12px;width:min(300px,calc(100vw - 24px))}
+  .hubLauncherToggle{padding:10px 12px}
+  .hubPollOptions{grid-template-columns:1fr}
+  .hubPoll{margin-top:38px;padding:26px 20px 0}
+  .systemHero{margin-top:64px}
+}
