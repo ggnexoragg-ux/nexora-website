@@ -1,4 +1,5 @@
 import FeedbackComposer from '../FeedbackComposer'
+import './feedback.css'
 
 export const metadata={title:'Feedback | NEXORA',description:'Send ideas and feedback for the NEXORA website and community.'}
 
