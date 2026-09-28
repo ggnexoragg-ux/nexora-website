@@ -3,6 +3,7 @@ import SiteExtras from './SiteExtras'
 import GiveawayCountdown from './GiveawayCountdown'
 import LiveStats from './LiveStats'
 import StatusPanel from './StatusPanel'
+import ExploreSection from './ExploreSection'
 const DISCORD='https://discord.gg/3yWX2qTUZ';
 const TIKTOK='https://www.tiktok.com/@nex0ra.gg';
 const DUBBY='https://www.dubby.gg/';
@@ -35,7 +36,9 @@ export default function Home(){return <main id="top"><Experience/><SiteExtras/>
 
 <section id="giveaways" className="wrap drop"><div className="dropHeader numberedTitle"><div><div className="sectionLabel"><div className="sectionNum">4</div><div className="eyebrow">DROPS / GIVEAWAYS / EVENTS</div></div><h2>WIN SOMETHING.<br/><span>STAY FOR MORE.</span></h2></div><p>Every giveaway has a clear status and its own details. Active drops include direct links to our Discord and TikTok; completed giveaways stay here in the NEXORA archive.</p></div><div className="giveTimeline"><i/><span>ACTIVE DROP</span><span>ARCHIVE</span><b>NEXORA GIVEAWAY HISTORY</b></div><div className="giveawayGrid">{giveaways.map((g,i)=>{const active=g.status==='ACTIVE';return (<article className={"giveawayCard "+(active?'isActive':'isEnded')} key={g.title}><div className="giveStatus"><i/>{g.status}</div><div className="giveNum">DROP // 0{i+1}</div><div className="giveBody">{active&&<GiveawayCountdown/>}<small>{g.prize}</small><h3>{g.title}</h3><p>{g.description}</p></div>{active?<div className="giveActions"><a href={DISCORD} target="_blank" rel="noreferrer">JOIN DISCORD ↗</a><a href={TIKTOK} target="_blank" rel="noreferrer">VIEW TIKTOK ↗</a></div>:<div className="endedStamp">ARCHIVED // ENDED</div>}</article>)})}</div><a className="sectionPortal" href="/giveaways">OPEN GIVEAWAY HUB <span>→</span></a></section><section id="partners" className="partnerSection"><div className="wrap"><div className="sectionLabel"><div className="sectionNum">5</div><div className="eyebrow">OFFICIAL PARTNER</div></div><div className="partnerHero"><div><h2>NEXORA <span>×</span><br/>DUBBY.</h2><p>Fuel the next session and support the community. Use our code at checkout.</p><a href={DUBBY} target="_blank" rel="noreferrer">VISIT DUBBY ↗</a></div><div className="codeBox"><small>COMMUNITY CODE</small><strong>NEXORADUBBY</strong><div><span>10%</span> OFF YOUR ORDER</div></div></div></div></section>
 
+<ExploreSection/>
+
 <section className="end wrap"><div className="endLogo"><img src="/nexora-logo.png" alt="NEXORA"/><div className="pulse"/></div><div className="eyebrow">THE LOBBY IS OPEN</div><h2>YOUR SQUAD<br/>COULD BE<br/><span>WAITING.</span></h2><p>Join NEXORA. Say hi. Find a game. Stay awhile.</p><a className="cta mega" href={DISCORD} target="_blank" rel="noreferrer">JOIN THE COMMUNITY <span>↗</span></a></section>
 
 <footer><div className="footerTop wrap"><div><div className="eyebrow">NEXORA // END OF LINE</div><h3>GAME TOGETHER.<br/><span>STAY CONNECTED.</span></h3></div><div className="footerNav"><a href="/news">NEWS</a><a href="/giveaways">GIVEAWAYS</a><a href="#community">COMMUNITY</a><a href="#partners">PARTNERS</a></div></div><div className="wrap foot"><a className="brand" href="#top"><img src="/nexora-logo.png" alt=""/><span>NEXORA</span></a><div className="footlinks"><a href={DISCORD} target="_blank" rel="noreferrer">DISCORD ↗</a><a href={TIKTOK} target="_blank" rel="noreferrer">TIKTOK ↗</a></div><div className="copy">© 2026 // NEXORA<br/>GAMING, TOGETHER.</div></div></footer>
-<div className="legalLinks"><span>© 2026 NEXORA</span><a href="/terms">TERMS</a><a href="/privacy">PRIVACY</a></div></main>}
+<div className="legalLinks"><span>© 2026 NEXORA</span><a href="/terms">TERMS</a><a href="/privacy">PRIVACY</a></div></main>
