@@ -1,0 +1,9 @@
+export const metadata={title:'Roadmap | NEXORA',description:'See what NEXORA has shipped, what is being improved and what is planned next.'}
+
+const shipped=['Discover hub','News explorer and article extras','Giveaway hub','Local XP and achievements','Nox room and site interactions','PWA / offline support','Community feedback flow'];
+const improving=['Creator hub content','Events calendar details','Release calendar coverage','SEO and internal linking','Mobile and accessibility polish'];
+const planned=['Analytics and Search Console','Creator submissions','Community event scheduling','Newsletter / RSS expansion','Custom domain after registration'];
+
+function Column({title,items,code}){return <article><b>{code}</b><small>{title}</small><h2>{title}</h2>{items.map(item=><p key={item}>→ {item}</p>)}</article>}
+
+export default function Roadmap(){return <main className="systemPage"><nav className="hubNav"><a href="/discover">← DISCOVER</a><b>ROADMAP // PUBLIC</b></nav><header className="systemHero"><small>NXR // ROADMAP</small><h1>BUILDING<br/><span>IN PUBLIC.</span></h1><p>A simple view of what NEXORA has already shipped, what is being tightened up, and what comes later. No fake dates or promises.</p></header><section className="achievementGrid"><Column code="01" title="SHIPPED" items={shipped}/><Column code="02" title="IMPROVING" items={improving}/><Column code="03" title="PLANNED" items={planned}/></section></main>}
