@@ -3,6 +3,7 @@ import {useState} from 'react'
 
 const links=[
   ['/discover','DISCOVER'],
+  ['/releases','RELEASES'],
   ['/events','EVENTS'],
   ['/creators','CREATORS'],
   ['/feedback','FEEDBACK'],
@@ -18,7 +19,7 @@ export default function HubLauncher(){
     </button>
     <div className="hubLauncherMenu" id="nexora-discover-menu" aria-hidden={!open}>
       <small>EXPLORE NEXORA</small>
-      {links.map(([href,label],i)=><a href={href} key={href}><b>0{i+1}</b><span>{label}</span><i>↗</i></a>)}
+      {links.map(([href,label],i)=><a href={href} key={href}><b>{String(i+1).padStart(2,'0')}</b><span>{label}</span><i>↗</i></a>)}
     </div>
   </div>
 }
