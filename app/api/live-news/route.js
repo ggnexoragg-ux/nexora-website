@@ -8,7 +8,7 @@ const sources = [
   { name: 'Engadget', category: 'TECH', url: 'https://www.engadget.com/rss.xml', host: 'www.engadget.com' },
   { name: 'Ars Technica', category: 'TECH', url: 'https://feeds.arstechnica.com/arstechnica/technology-lab', host: 'arstechnica.com' },
 ];
-const parser = new XMLParser({ ignoreAttributes: true, processEntities: true, trimValues: true });
+const parser = new XMLParser({ ignoreAttributes: true, processEntities: false, trimValues: true });
 const asArray = value => Array.isArray(value) ? value : value ? [value] : [];
 
 async function readSource(source) {
@@ -40,5 +40,5 @@ export async function GET() {
   const unique = stories.filter(story => { if (seen.has(story.url)) return false; seen.add(story.url); return true; });
   const newest = category => unique.filter(story => story.category === category).sort((a, b) => b.date.localeCompare(a.date)).slice(0, 12);
   const articles = [...newest('GAMING'), ...newest('TECH')].sort((a, b) => b.date.localeCompare(a.date));
-  return NextResponse.json({ articles }, { headers: { 'Cache-Control': 'public, s-maxage=1800, stale-while-revalidate=1800' } });
+  return NextResponse.json({ articles }, { headers: { 'Cache-Control': 'public, s-maxage=1800, stale-while-revalidate=1800', 'X-Content-Type-Options': 'nosniff' } });
 }
