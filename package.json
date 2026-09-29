@@ -1,1 +1,1 @@
-{"name":"nexora-website","version":"1.0.0","private":true,"scripts":{"dev":"next dev","build":"next build","start":"next start"},"dependencies":{"@tailwindcss/postcss":"latest","next":"latest","react":"latest","react-dom":"latest","tailwindcss":"latest"},"devDependencies":{}}
+{"name":"nexora-website","version":"1.0.0","private":true,"scripts":{"dev":"next dev","build":"next build","start":"next start"},"dependencies":{"@tailwindcss/postcss":"latest","fast-xml-parser":"^5.11.2","next":"latest","react":"latest","react-dom":"latest","tailwindcss":"latest"}}
