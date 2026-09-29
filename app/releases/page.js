@@ -1,5 +1,15 @@
-export const metadata={title:'Game Releases | NEXORA',description:'A NEXORA home for upcoming game releases and related coverage.'}
+import ReleaseCalendar from './ReleaseCalendar';
+import './releases.css';
 
-const platforms=['PC','PLAYSTATION','XBOX','NINTENDO'];
+export const metadata = {
+  title: 'Game Release Calendar | NEXORA',
+  description: 'Explore upcoming PC, PlayStation, Xbox and Nintendo game release dates, refreshed automatically.',
+};
 
-export default function Releases(){return <main className="systemPage"><nav className="hubNav"><a href="/discover">← DISCOVER</a><b>RELEASES // CALENDAR</b></nav><header className="systemHero"><small>NXR // RELEASES</small><h1>WHAT'S<br/><span>DROPPING NEXT.</span></h1><p>The release calendar structure is now live. Confirmed games and dates can be added here as NEXORA publishes coverage, without mixing guesses into the calendar.</p></header><section className="achievementGrid">{platforms.map((platform,i)=><article key={platform}><b>0{i+1}</b><small>PLATFORM</small><h2>{platform}</h2><p>Upcoming confirmed releases for {platform} will appear here with dates and links to NEXORA coverage.</p></article>)}</section><section className="hubPoll"><div className="hubSectionHead"><small>NXR // RELEASE FEED</small><h2>BUILT FOR<br/><span>FRESH UPDATES.</span></h2><p>This page is intentionally ready without inventing titles or release dates. As new stories are published, confirmed releases can be linked straight into the Newswire.</p></div><a className="cta" href="/news">OPEN NEWSWIRE <span>→</span></a></section></main>}
+export default function Releases() {
+  return <main className="systemPage releasePage">
+    <nav className="hubNav"><a href="/discover">← DISCOVER</a><b>RELEASES // CALENDAR</b></nav>
+    <header className="systemHero"><small>NXR // RELEASES</small><h1>WHAT'S<br/><span>DROPPING NEXT.</span></h1><p>Explore upcoming games by month and platform. Dates can change, so check the game's listing before making plans.</p></header>
+    <ReleaseCalendar />
+  </main>;
+}
