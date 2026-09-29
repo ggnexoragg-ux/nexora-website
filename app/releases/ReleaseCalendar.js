@@ -3,8 +3,8 @@
 import { useEffect, useMemo, useState } from 'react';
 
 const platforms = ['All', 'PC', 'PlayStation', 'Xbox', 'Nintendo'];
-const monthKey = date => `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
-const monthDate = key => { const [year, month] = key.split('-').map(Number); return new Date(year, month - 1, 1); };
+const monthKey = date => `${date.getUTCFullYear()}-${String(date.getUTCMonth() + 1).padStart(2, '0')}`;
+const monthDate = key => { const [year, month] = key.split('-').map(Number); return new Date(Date.UTC(year, month - 1, 1)); };
 const dateLabel = value => new Intl.DateTimeFormat('en', { day: 'numeric', month: 'short', timeZone: 'UTC' }).format(new Date(`${value}T12:00:00Z`));
 
 export default function ReleaseCalendar({ compact = false }) {
@@ -16,11 +16,13 @@ export default function ReleaseCalendar({ compact = false }) {
   const [loading, setLoading] = useState(true);
   const [truncated, setTruncated] = useState(false);
   const [retry, setRetry] = useState(0);
-  const todayIndex = useMemo(() => { const now = new Date(); return now.getFullYear() * 12 + now.getMonth(); }, []);
-  const monthIndex = monthDate(month).getFullYear() * 12 + monthDate(month).getMonth();
+  const todayIndex = useMemo(() => { const now = new Date(); return now.getUTCFullYear() * 12 + now.getUTCMonth(); }, []);
+  const monthIndex = monthDate(month).getUTCFullYear() * 12 + monthDate(month).getUTCMonth();
 
   useEffect(() => {
     const controller = new AbortController();
+    setLoading(true);
+    setError('');
     fetch(`/api/releases?month=${month}`, { signal: controller.signal })
       .then(async response => { const data = await response.json(); if (!response.ok) throw new Error(data.error || 'Release dates could not be loaded.'); return data; })
       .then(data => { setGames(data.games); setTruncated(data.truncated); setError(''); setLoading(false); })
@@ -30,7 +32,7 @@ export default function ReleaseCalendar({ compact = false }) {
 
   function changeMonth(step) {
     const next = monthDate(month);
-    next.setMonth(next.getMonth() + step);
+    next.setUTCMonth(next.getUTCMonth() + step);
     setLoading(true);
     setMonth(monthKey(next));
   }
@@ -41,7 +43,7 @@ export default function ReleaseCalendar({ compact = false }) {
 
   return <section className="releaseCalendar" aria-label="Game release calendar">
     <div className="releaseToolbar">
-      <div className="releaseMonth"><button type="button" onClick={() => changeMonth(-1)} disabled={monthIndex <= todayIndex - 1} aria-label="Previous month">‹</button><h2>{new Intl.DateTimeFormat('en', { month: 'long', year: 'numeric' }).format(monthDate(month))}</h2><button type="button" onClick={() => changeMonth(1)} disabled={monthIndex >= todayIndex + 23} aria-label="Next month">›</button></div>
+      <div className="releaseMonth"><button type="button" onClick={() => changeMonth(-1)} disabled={monthIndex <= todayIndex - 1} aria-label="Previous month">‹</button><h2>{new Intl.DateTimeFormat('en', { month: 'long', year: 'numeric', timeZone: 'UTC' }).format(monthDate(month))}</h2><button type="button" onClick={() => changeMonth(1)} disabled={monthIndex >= todayIndex + 23} aria-label="Next month">›</button></div>
       <label className="releaseSearch"><span className="srOnly">Search games</span><input type="search" placeholder="Search games" value={search} onChange={event => setSearch(event.target.value)} /></label>
     </div>
     <div className="releasePlatforms" role="group" aria-label="Filter by platform">{platforms.map(name => <button type="button" key={name} className={platform === name ? 'active' : ''} aria-pressed={platform === name} onClick={() => setPlatform(name)}>{name}</button>)}</div>
