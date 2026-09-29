@@ -7,7 +7,7 @@ const monthKey = date => `${date.getFullYear()}-${String(date.getMonth() + 1).pa
 const monthDate = key => { const [year, month] = key.split('-').map(Number); return new Date(year, month - 1, 1); };
 const dateLabel = value => new Intl.DateTimeFormat('en', { day: 'numeric', month: 'short', timeZone: 'UTC' }).format(new Date(`${value}T12:00:00Z`));
 
-export default function ReleaseCalendar() {
+export default function ReleaseCalendar({ compact = false }) {
   const [month, setMonth] = useState(() => monthKey(new Date()));
   const [platform, setPlatform] = useState('All');
   const [search, setSearch] = useState('');
@@ -36,7 +36,8 @@ export default function ReleaseCalendar() {
   }
 
   const visible = games.filter(game => (platform === 'All' || game.platforms.includes(platform)) && game.name.toLowerCase().includes(search.trim().toLowerCase()));
-  const groups = Object.groupBy ? Object.groupBy(visible, game => game.date) : visible.reduce((result, game) => { (result[game.date] ||= []).push(game); return result; }, {});
+  const displayed = compact ? visible.slice(0, 8) : visible;
+  const groups = displayed.reduce((result, game) => { (result[game.date] ||= []).push(game); return result; }, {});
 
   return <section className="releaseCalendar" aria-label="Game release calendar">
     <div className="releaseToolbar">
@@ -47,6 +48,7 @@ export default function ReleaseCalendar() {
     <div className="releaseResults" aria-live="polite" aria-busy={loading}>
       {loading ? <p className="releaseMessage">Loading release dates…</p> : error ? <div className="releaseMessage"><p>{error}</p><button type="button" onClick={() => { setLoading(true); setRetry(value => value + 1); }}>Try again</button></div> : visible.length === 0 ? <p className="releaseMessage">No games found for this month and filter.</p> : Object.entries(groups).sort(([a], [b]) => a.localeCompare(b)).map(([date, entries]) => <div className="releaseDay" key={date}><div className="releaseDate"><strong>{dateLabel(date)}</strong><span>{new Intl.DateTimeFormat('en', { weekday: 'long', timeZone: 'UTC' }).format(new Date(`${date}T12:00:00Z`))}</span></div><div className="releaseCards">{entries.map(game => <a className="releaseCard" key={game.id} href={game.url} target="_blank" rel="noopener noreferrer"><div className="releaseCover">{game.image ? <img src={game.image} alt="" loading="lazy" /> : <span>NXR</span>}</div><div className="releaseInfo"><h3>{game.name}</h3><p>{game.platforms.join(' · ')}</p></div><span className="releaseExternal" aria-hidden="true">↗</span></a>)}</div></div>)}
       {!loading && !error && truncated && <p className="releaseNote">Showing the first 120 listed games this month.</p>}
+      {!loading && !error && compact && visible.length > displayed.length && <p className="releaseNote">Showing 8 of {visible.length} listed games. <a href="/releases">View the full month</a></p>}
     </div>
     <p className="releaseCredit">Release data and images from <a href="https://rawg.io/" target="_blank" rel="noopener noreferrer">RAWG</a>. Dates and platform availability may change.</p>
   </section>;
